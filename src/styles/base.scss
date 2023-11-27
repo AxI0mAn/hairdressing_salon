@@ -1,0 +1,164 @@
+@import './base/nulling.scss';
+@import './base/fonts.scss';
+@import './base/vars.scss';
+@import './base/mixins.scss';
+@import './partials/_header.scss';
+@import './partials/_modal.scss';
+@import './partials/_footer.scss';
+
+body {
+  height: 100%;
+  background-color: $bgc;
+  font-size: 18px;
+  color: $white;
+
+  a,
+  button,
+  a > span {
+    font-family: 'Cormorant Garamond SemiBold', serif;
+    background-color: transparent;
+    @include font_adapt(18, 12);
+    text-transform: capitalize;
+    color: $white;
+
+    &:link {
+      color: $white;
+    }
+
+    &:visited {
+      color: $white;
+    }
+
+    &:hover {
+      color: $accent;
+      text-decoration: underline;
+      text-decoration-style: solid;
+      text-underline-position: under;
+      text-underline-offset: 2.5px;
+      -moz-text-decoration-style: solid;
+    }
+
+    &:active {
+      color: $black;
+      letter-spacing: 0.25rem;
+      text-shadow: -5px -5px 15px $accent;
+    }
+
+    @include transit;
+  }
+
+  h1 {
+    font-family: 'Garamond Bold', serif;
+    @include font_adapt(72, 18);
+  }
+
+  h2 {
+    font-family: 'Garamond Bold', serif;
+    @include font_adapt(48, 17);
+  }
+
+  h3 {
+    font-family: 'EBGaramond Regular', serif;
+    @include font_adapt(30, 16);
+  }
+
+  h4 {
+    font-family: 'Cormorant Garamond Bold', serif;
+    @include font_adapt(27, 15);
+  }
+
+  h5 {
+    font-family: 'Garamond Bold', serif;
+    @include font_adapt(24, 14);
+  }
+
+  p {
+    font-family: 'Cormorant Garamond Regular', serif;
+    @include font_adapt(18, 12);
+  }
+
+  strong {
+    font-family: 'Garamond Bold', serif;
+    @include font_adapt(27, 15);
+    color: $accent;
+  }
+}
+
+.wrapper {
+  max-width: calc($maxWidth * 1px);
+  min-width: calc($minWidth * 1px);
+  min-height: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  margin: 0 auto;
+}
+
+.container {
+  width: func_respons(1296, 320); //func_perc(1920, 1296); // default 1296;
+  max-width: calc($maxWidthContainer * 1px);
+  margin: 0 auto;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+// ===================================min-width: 1921px
+@media screen and (min-width: 1921px) {
+  .wrapper {
+    max-width: 5000px;
+  }
+
+  .container {
+    width: func_respons(1296, 320); //func_perc(1920, 1296); // default 1296;
+    max-width: calc($maxWidthContainer * 1px);
+    margin: 0 auto;
+  }
+
+  :root {
+    a,
+    button,
+    a > span {
+      font-size: calc(18px + 2rem);
+    }
+
+    h1 {
+      font-size: calc(72px + 2rem);
+    }
+
+    h2 {
+      font-size: calc(48px + 2rem);
+    }
+
+    h3 {
+      font-size: calc(30px + 2rem);
+    }
+
+    h4 {
+      font-size: calc(27px + 2rem);
+    }
+
+    h5 {
+      font-size: calc(24px + 2rem);
+    }
+
+    strong {
+      font-size: calc(22px + 2rem);
+    }
+
+    p {
+      font-size: calc(18px + 2rem);
+      line-height: 3.5rem;
+    }
+  }
+}
+
+// ===================================min-width: 2300px
+@media screen and (min-width: 2300px) {
+  .container {
+    width: calc($maxWidthContainer * 1px);
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,19 @@
+$minWidth: 320; // ширинa экрана мобильника
+$maxWidth: 1920; // ширина полотна макета
+$maxWidthContainer: 1296; // ширина ограничивающего контейнера именно тут - совпадает с $maxWidth
+
+//размер шрифта для <html> по умолчанию
+$rem: 16; //px
+
+// oсновные цвета макета
+$white: #fff; //T_nav:hover T_card:hover T_button
+$accent: #cdaa7d;
+$grey: #c4c4c4;
+$bgc: #111;
+$black: #000;
+
+$shadow: rgba(153, 186, 237, 0.25);
+
+// $T_color: #153461;
+// $T_h_color: #163561;
+// $T_nav_color: #163561;

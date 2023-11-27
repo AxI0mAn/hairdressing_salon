@@ -1,0 +1,26 @@
+{% block footer %}
+<footer class="container">
+  <div class="footer_content">
+    <a href="index.html" title="logo" class="logotype"> 
+      {% include "svg_inline/_logo_icon.njk" %} 
+    </a>
+    <div class="footer_contacts">
+      {% include "./partials/_contacts_part.njk" %}
+    </div>
+    <div class="working_hours">
+      {% include "./partials/_working_hours.njk" %}      
+    </div>
+    <div class="we_instagram">
+      <a href="#" title="Instagram" class="instagram"> 
+        <span>Our instagram.</span>
+        {% include "./svg_inline/_logo_instagram.njk" %}
+      </a>
+    </div>
+  </div>
+  <p class="copyright">Copyright &#169; 2017 - 2022</p>
+</footer>
+</div> {#wrapper from src/templates/partials/_head.njk#}
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,123 @@
+
+{% block header %}
+ 
+  {% set nav_left=[      
+    {
+      link: "index.html",
+      titl: 'home',
+      text: 'Home'
+    },
+    {
+      link: "ourTeam.html",
+      titl: 'ourTeam',
+      text: 'Our Team'
+    },
+    {
+      link: "cosmetics.html",
+      titl: 'cosmetics',
+      text: 'Cosmetics'
+    } 
+  ] %}
+{% set nav_right=[      
+    {
+      link: "price.html",
+      titl: 'prices',
+      text: 'Prices'
+    },
+    {
+      link: "reviews.html",
+      titl: 'reviews',
+      text: 'Reviews'
+    },
+    {
+      link: "contacts.html",
+      titl: 'contacts',
+      text: 'Contacts'
+    } 
+  ] %}
+
+  <header class="container"> 
+    <nav>
+      <ul>
+        <li>
+          <span class="mini_nav">&#9776;</span>
+          <ul>
+            <li class="mini_menu">
+              <a href="#" title="Instagram" class="instagram"> 
+                {% include "./svg_inline/_logo_instagram.njk" %}
+              </a>
+            </li>
+            
+            {% for a in nav_left %}                              
+            <li>
+              {% if title == a.titl %} 
+                  <a href={{ a.link }} title={{ a.titl }} class="active" >
+                    <span> 
+                      {{ a.text }} 
+                    </span>
+                  </a>
+                {% else %}
+                  <a href={{ a.link }} title={{ a.titl }}>
+                    <span> 
+                      {{ a.text }} 
+                    </span>
+                  </a>
+                {% endif %}
+              {% endfor %} 
+            </li>
+
+            <li class="mini_menu">
+              <a href="index.html" title="logo" class="logotype"> 
+                {% include "./svg_inline/_logo_icon.njk" %} 
+              </a>
+            </li>
+
+            {% for a in nav_right %}                  
+            <li>
+              {% if title == a.titl %} 
+                  <a href={{ a.link }} title={{ a.titl }} class="active" >
+                    <span> 
+                      {{ a.text }} 
+                    </span>
+                  </a>
+                {% else %}
+                  <a href={{ a.link }} title={{ a.titl }}>
+                    <span> 
+                      {{ a.text }} 
+                    </span>
+                  </a>
+                {% endif %}
+              {% endfor %} 
+            </li> 
+
+            <li class="mini_menu">
+              <a href="#" title="working_hours" class="open_now"> 
+                {% include "./svg_inline/_logo_working_hours.njk" %}
+              </a>
+            </li>              
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <menu>
+      <ul>
+        <li>
+          <a href="index.html" title="logo" class="logotype"> 
+            {% include "./svg_inline/_logo_icon.njk" %} 
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Instagram" class="instagram"> 
+            {% include "./svg_inline/_logo_instagram.njk" %}
+          </a>
+        </li>
+        <li>
+          <a href="#" title="working_hours"  class="open_now"> 
+            {% include "./svg_inline/_logo_working_hours.njk" %}
+          </a>
+        </li>
+      </ul>
+    </menu>
+  </header>
+  
+{% endblock %}

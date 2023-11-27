@@ -1,0 +1,31 @@
+@import './../base.scss';
+.main_contacts {
+  width: 96%;
+  margin: 0 auto;
+  h2 {
+    margin: func_respons(80, 20) auto func_respons(40, 20) auto;
+    text-align: center;
+  }
+  .map_contacts {
+    width: 90%;
+    min-height: 50vmin;
+    iframe {
+      width: 60vmin;
+      height: 45vmin;
+      @include сentering-x();
+    }
+  }
+}
+//===================================max-width: 450px
+@media screen and (max-width: 450px) {
+  .main_contacts {
+    width: 90%;
+    .map_contacts {
+      iframe {
+        width: 90vmin;
+        height: 70vmin;
+        @include сentering-x();
+      }
+    }
+  }
+}

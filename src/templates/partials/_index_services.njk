@@ -1,0 +1,45 @@
+{% block _index_services %}
+{% set services = [
+          {
+            src: ' ./../assets/images/jpeg/services_item_6L.jpeg ',
+            alt: 'hairdressing services',
+            titl: 'hairdressing_services',
+            header: 'hairdressing services'
+          },
+          {
+            src: ' ./../assets/images/jpeg/services_item_4L.jpeg ',
+            alt: 'manicure services',
+            titl: 'manicure_services',
+            header: 'manicure'
+          },
+          {
+            src: ' ./../assets/images/jpeg/services_item_2L.jpeg ',
+            alt: 'pedicure services',
+            titl: 'pedicure_services',
+            header: 'pedicure'
+          },
+          {
+            src: ' ./../assets/images/jpeg/services_item_5L.jpeg ',
+            alt: 'cosmetology services',
+            titl: 'cosmetology_services',
+            header: 'cosmetology'
+          },
+          {
+            src: ' ./../assets/images/jpeg/services_item_3L.jpeg ',
+            alt: 'body esthetician',
+            titl: 'bodyesthetician',
+            header: 'body esthetician'
+          },
+          {
+            src: ' ./../assets/images/jpeg/services_item_1L.jpeg ',
+            alt: 'make-up services',
+            titl: 'make_up_services',
+            header: 'make-up'
+          }
+        ]%}
+        {%- import "_macros_services.njk" as serv -%}
+
+        {% for item in services %}
+        {{ serv.gallery(item, classBlock = 'services_content') }}
+        {% endfor %} 
+{% endblock %}

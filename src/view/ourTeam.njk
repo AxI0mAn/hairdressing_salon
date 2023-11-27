@@ -1,0 +1,68 @@
+{% set title = 'Our Team' %}
+{% include "_head.njk" %} 
+
+{% include "_header.njk" %}
+
+<main class="main_ourTeam">
+  <h2>Our masters</h2>
+  <section class="container">
+    <div class="ourTeam">
+      {% set ourTeam = [
+          {
+            src: './../assets/images/png/team_1.png',
+            alt: 'Hairdresser and Barber',
+            titl: 'Hairdresser and Barber',
+            card_header: 'First_Name Last_Name',
+            text: 'Hairdresser and Barber'
+          },
+          {
+            src: './../assets/images/png/team_2.png',
+            alt: 'Manicurist',
+            titl: 'Manicurist',
+            card_header: 'First_Name Last_Name',
+            text: 'Manicurist'
+          },
+          {
+            src: './../assets/images/png/team_3.png',
+            alt: 'Pedicurist',
+            titl: 'Pedicurist',
+            card_header: 'First_N Last',
+            text: 'Pedicurist'
+          },
+          {
+            src: './../assets/images/png/team_4.png',
+            alt: 'Cosmetologist',
+            titl: 'Cosmetologist',
+            card_header: 'First_Name Last_Name',
+            text: 'Cosmetologist'
+          },
+          {
+            src: './../assets/images/png/team_6.jpeg',
+            alt: 'Masseur',
+            titl: 'Masseur',
+            card_header: 'First Last_N',
+            text: 'Masseur'
+          },
+          {
+            src: './../assets/images/png/team_5.png',
+            alt: 'Visagiste',
+            titl: 'Visagiste',
+            card_header: 'First_Name Last_N',
+            text: 'Visagiste'
+          }
+        ]%}
+
+      {%- import "_macros_gallery.njk" as makeTeam -%}
+
+      {% for item in ourTeam %}
+      <div class="card_team">
+        {{ makeTeam.gallery(item, classBlock = 'ourTeam_content') }}
+        <h4>{{ item.card_header }}</h4>
+        <p>{{item.text}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% include "_modal.njk" %}  
+{% include "_footer.njk" %}   

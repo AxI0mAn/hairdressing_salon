@@ -1,0 +1,56 @@
+{% set title = 'Home' %}
+{% include "_head.njk" %} 
+
+{% include "_header.njk" %}
+
+    <main class="main_index">
+      <section class="hero">
+        <div class="hero_content">
+        <img src="./../assets/images/png/bgc_hero.png" loading="lazy" alt="foto our salon" title="foto_our_salon"/>
+        <h1>Beauty salon <br> &#171;Salon-Beauty&#187; <br> in the most beautiful place on this planet</h1>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="welcome">
+          <div class="welcome_content">
+            {% include "./svg_inline/_logo_quotes.njk" %}
+            <div class="welcome_text">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu nibh vitae amet. Ipsum, pharetra donec ornare velit. Id at quisque accumsan risus ac ipsum ut. Sit elit, facilisi proin non malesuada sociis tristique. Viverra augue lorem ut quisque quam tortor, malesuada iaculis. </p>
+              <p>Et elementum at nulla venenatis, faucibus integer. Auctor neque eros, viverra rutrum. Fames ultrices condimentum tortor nec penatibus. Velit imperdiet sapien fringilla vestibulum sit fames. </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container ">
+        <div class="services">  
+          {% include "_index_services.njk" %}
+        </div>
+      </section>
+      <section class="container">
+        <div class="partners">
+          <div class="partners_content">
+            <img src="./../assets/images/svg/image3_logo4.svg" loading="lazy" alt="kevin.murphy logo" title="kevin.murphy_logo"/>
+            <img src="./../assets/images/svg/image4_logo1.svg" loading="lazy" alt="oribe logo" title="oribe_logo"/>
+            <img src="./../assets/images/svg/image5_logo2.svg" loading="lazy" alt="alterna logo" title="alterna_logo"/>
+            <img src="./../assets/images/svg/image6_logo3.svg" loading="lazy" alt="aldoCoppola logo" title="aldoCoppola_logo"/>
+          </div>
+        </div>
+      </section>
+      <section class="container">
+        <div class="work">
+          <h2>Our works</h2>
+          <div class="filter">
+            <button>show all</button>
+            <button>hairdressing</button>
+            <button>manicure</button>
+            <button>pedicure</button>
+          </div>
+          <div class="work_content">
+            {% include "_index_works.njk" %}
+          </div>
+        </div>
+      </section>
+    </main>
+{% include "_modal.njk" %}  
+{% include "_footer.njk" %}

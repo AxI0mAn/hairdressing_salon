@@ -1,0 +1,28 @@
+{% set params =[
+  {
+    src: "src",
+    alt: 'alt',
+    titl: 'titl',
+    card_header: 'header',
+    text:'',
+    price:''
+  }
+] %}
+
+{%- macro catalog(params, classBlock="block") -%}
+  <div class="{{classBlock}} item">
+    <img src="{{params.src}}" loading="lazy" alt="{{params.alt}}" title="{{params.titl}}"/>
+    <div>
+      <h3>{{params.card_header}}</h3>
+      <p>{{params.text}}</p>
+      <strong>{{params.price}} $</strong>
+      <button>add to cart</button>
+    </div>
+  </div> 
+{%- endmacro -%}
+{# USE
+{%- import "_macros_catalog.njk" as makeCatalog -%}
+
+{% for item in ourTeam %}
+ {{ makeTeam.gallery(item, classBlock = 'type_prod') }}
+{% endfor %}  #}

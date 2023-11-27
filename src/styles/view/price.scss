@@ -1,0 +1,100 @@
+@import './../base.scss';
+
+.main_prices {
+  width: 100%;
+  margin: 0 auto;
+  h2 {
+    margin: func_respons(80, 20) auto;
+    text-align: center;
+  }
+  section:nth-child(2n + 1) {
+    video {
+      order: 1;
+    }
+  }
+  .price {
+    // width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px; //default 134
+
+    justify-items: center;
+    align-items: center;
+    margin: func_respons(100, 40) auto;
+    video {
+      width: func_respons(600, 300);
+      height: auto;
+    }
+    .price_list {
+      // width: func_respons(600, 400);
+      height: fit-content;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-around;
+      .service {
+        margin: func_respons(20, 10) auto;
+        border-bottom: 1px $accent groove;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        .service_header {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          h4:last-child {
+            padding-right: 1.5rem;
+            position: relative;
+            &:after {
+              content: '$';
+              position: absolute;
+              right: 0px;
+            }
+          }
+        }
+        p {
+          margin: 10px auto;
+        }
+      }
+    }
+  }
+}
+
+//===================================max-width: 1200px
+@media screen and (max-width: 1200px) {
+  .main_prices {
+    .price:nth-child(2n + 1) {
+      video {
+        order: 0;
+      }
+    }
+    .price {
+      display: grid;
+      grid-template-columns: 1fr;
+      video {
+        width: 90%;
+      }
+      .price_list {
+        width: 90%;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+//===================================min-width: 1921px
+@media screen and (min-width: 1921px) {
+  .main_prices {
+    width: 80vw;
+  }
+  section.container {
+    min-width: 80vw;
+    .price_list {
+      min-width: 40vw;
+    }
+  }
+
+  p.service_about {
+    line-height: 3rem;
+  }
+}

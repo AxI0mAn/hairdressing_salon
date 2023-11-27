@@ -1,0 +1,44 @@
+{% block _review_all %}
+
+        {% set reviews = [
+          {
+            src: './../assets/images/jpeg/work_4L.jpeg',
+            alt: 'real review about our services',
+            titl: 'real review about our services',
+            header: "nice service",
+            text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, ea. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Eligendi eius fuga architecto."          
+          },
+          {
+            src: './../assets/images/jpeg/work_5L.jpeg',
+            alt: 'last review about our services',
+            titl: 'last review about our services',
+            header: "very good masters",
+            text:  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, ea. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Eligendi eius fuga architecto.  Repellendus, ea. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Eligendi eius fuga architecto."           
+          },
+          {
+            src: './../assets/images/jpeg/work_1L.jpeg',
+            alt: 'new review about our services',
+            titl: 'new review about our services',
+            header: "I am happy",
+            text: " Repellendus, ea. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Eligendi eius fuga architecto.  Repellendus, ea. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Eligendi eius fuga architecto.  Repellendus, ea. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Eligendi eius fuga architecto."            
+          }
+        ]%}
+        {%- import "_macros_gallery.njk" as showCase -%}
+
+        {% for item in reviews %}
+        <div class="review">
+          {{ showCase.gallery(item, classBlock = 'reviews_content') }}
+          <div class="review_text">
+            <h3>{{item.header}}</h3>
+            <p>{{item.text}}</p>
+          </div>
+        </div>
+        {% endfor %} 
+
+{% endblock %}

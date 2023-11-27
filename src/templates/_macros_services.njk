@@ -1,0 +1,17 @@
+{% set params =[
+  {
+    src: 'src',
+    alt: 'alt',
+    titl: 'titl',
+    header: 'header'
+  }
+] %}
+
+{%- macro gallery(params, classBlock="block", headNum="h1") -%}
+  <div class="{{classBlock}}">
+    <div class="img_{{classBlock}}">
+      <img src="{{params.src}}" loading="lazy" alt="{{params.alt}}" title="{{params.titl}}"/>
+    </div>
+    <h3>{{params.header}}</h3>
+  </div> 
+{%- endmacro -%}

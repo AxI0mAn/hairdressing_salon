@@ -1,0 +1,25 @@
+{% set title = 'Cosmetics' %}
+{% include "_head.njk" %} 
+
+{% include "_header.njk" %}
+<main  class="main_cosmetics">
+  <h2>beauty products</h2>
+  <section class="container">
+    <div class="catalog_cosmetics">
+      <article class="catalog_hair catalog">
+        {% include "./catalogs/_cat_hair.njk" %}
+      </article>
+      <article class="catalog_nails catalog">
+        {% include "./catalogs/_cat_nail.njk" %}
+      </article>
+      <article class="catalog_body catalog">
+        {% include "./catalogs/_cat_body.njk" %}
+      </article>
+      <article class="catalog_make_up catalog">
+        {% include "./catalogs/_cat_make_up.njk" %}
+      </article>
+    </div>
+  </section>
+</main>
+{% include "_modal.njk" %}  
+{% include "_footer.njk" %}

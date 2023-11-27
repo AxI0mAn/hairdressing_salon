@@ -1,0 +1,61 @@
+@import './../base.scss';
+.main_reviews {
+  width: 96%;
+  margin: 0 auto;
+  h2 {
+    margin: func_respons(80, 20) auto;
+    text-align: center;
+  }
+  section {
+    margin: 0 auto;
+    .reviews-new {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(func_respons(600, 300), 1fr));
+      gap: 0px 10px;
+
+      justify-items: center;
+      align-items: start;
+      margin: func_respons(100, 40) auto;
+      .review {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-content: center;
+        .img_reviews_content {
+          width: func_respons(600, 300);
+          height: auto;
+          text-align: center;
+          img {
+            max-width: 300px;
+            max-height: 500px;
+          }
+        }
+        .review_text {
+          width: func_respons(500, 300);
+          margin: func_respons(20, 10) auto;
+          border-bottom: 1px $accent groove;
+          height: fit-content;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-around;
+          h3 {
+            align-self: center;
+          }
+          p {
+            margin: 10px auto 20px auto;
+          }
+        }
+      }
+    }
+  }
+}
+//===================================max-width: 900px
+@media screen and (max-width: 900px) {
+  // .main_reviews {
+  //   .review {
+  //     width: 90%;
+  //     display: grid;
+  //     grid-template-columns: 1fr;
+  //   }
+  // }
+}

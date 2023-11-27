@@ -1,0 +1,44 @@
+{% set params =[
+  {
+    src: 'src',
+    alt: 'alt',
+    titl: 'titl',
+    card_header: 'header',
+    text:'',
+    price:''
+  }
+] %}
+
+{%- macro gallery(params, classBlock="block", headNum="h1") -%}
+  <div class="img_{{classBlock}}">
+    <img src="{{params.src}}" loading="lazy" alt="{{params.alt}}" title="{{params.titl}}"/>
+  </div>
+{%- endmacro -%}
+
+
+
+{# USE
+ {% set ourTeam = [
+    {
+      src: ' "./../assets/images/png/team_1.png" ',
+      alt: 'Hairdresser and Barber',
+      titl: 'Hairdresser and Barber',
+      card_header: 'First_Name Last_Name',
+      text: 'Hairdresser and Barber'
+    },
+    {
+      src: ' "./../assets/images/png/team_5.png" ',
+      alt: 'Visagiste',
+      titl: 'Visagiste',
+      card_header: 'First_Name Last_N',
+      text: 'Visagiste'
+    }
+  ]%}
+
+{%- import "_macros_gallery.njk" as makeTeam -%}
+
+{% for item in ourTeam %}
+ {{ makeTeam.gallery(item, classBlock = 'team_content') }}
+ <h4>{{ item.card_header }}</h4>
+ <p>{{item.text}}</p>
+{% endfor %}  #}

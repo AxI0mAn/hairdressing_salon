@@ -1,0 +1,14 @@
+{% set title = 'Reviews' %}
+{% include "_head.njk" %} 
+
+{% include "_header.njk" %}
+<main class="main_reviews">
+  <h2>Reviews our Clients</h2>
+  <section class="container">
+    <div class="reviews-new">
+      {% include "_review_all.njk" %}
+    </div>
+  </section>
+</main>
+{% include "_modal.njk" %}  
+{% include "_footer.njk" %}
