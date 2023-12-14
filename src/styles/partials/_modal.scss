@@ -1,20 +1,80 @@
 .modal {
   display: none;
   width: func_rem(475);
-  height: 100vh; // default 1038px;
+  height: 100vh;
+  //default1038px:;
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 0%;
+  right: 0%;
   background-color: #111;
   z-index: 30;
-  svg:first-child {
+  opacity: 0;
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+
+  button {
     width: 32px;
     height: 32px;
 
-    margin-top: 40px;
+    margin-top: 80px;
     margin-left: 80px;
-    position: absolute;
+    color: $bgc;
+
+    position: relative;
+
+    %btn_bef_modal {
+      @include сentering-xy();
+      content: '';
+      width: 35px;
+      height: 2px;
+      transform: translateX(-50%) rotateZ(45deg);
+      -webkit-transform: translateX(-50%) rotateZ(45deg);
+      -moz-transform: translateX(-50%) rotateZ(45deg);
+      -ms-transform: translateX(-50%) rotateZ(45deg);
+      -o-transform: translateX(-50%) rotateZ(45deg);
+    }
+
+    %btn_aft_modal {
+      @include сentering-xy();
+      content: '';
+      width: 35px;
+      height: 2px;
+      transform: translateX(-50%) rotateZ(-45deg);
+      -webkit-transform: translateX(-50%) rotateZ(-45deg);
+      -moz-transform: translateX(-50%) rotateZ(-45deg);
+      -ms-transform: translateX(-50%) rotateZ(-45deg);
+      -o-transform: translateX(-50%) rotateZ(-45deg);
+
+    }
+
+    ::before {
+      background-color: $white;
+      @extend %btn_bef_modal;
+    }
+
+    ::after {
+      background-color: $white;
+      @extend %btn_aft_modal;
+    }
   }
+
+  button:hover {
+    @include transit;
+
+    ::after {
+      background-color: $accent;
+      @extend %btn_aft_modal;
+    }
+
+    ::before {
+      background-color: $accent;
+      @extend %btn_bef_modal;
+    }
+  }
+
   .modal_content {
     width: func_rem(315);
     height: 60%;
@@ -26,21 +86,25 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+
     :first-child {
       width: 100%;
       height: fit-content;
       line-height: func_rem(23.4);
     }
+
     .modal_contacts {
       width: 100%;
       height: func_rem(254); //defaukt 154;
       min-height: fit-content;
+
       address {
         width: 100%;
         height: 100%;
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-around;
+
         a {
           span {
             text-transform: lowercase;
@@ -48,11 +112,13 @@
         }
       }
     }
+
     .modal_working_hours {
       width: 100%;
       height: func_rem(125); //defaukt 125;
       min-height: fit-content;
       margin: 1rem auto;
+
       .working_hours_conteiner {
         width: 100%;
         height: 100%;
@@ -63,11 +129,35 @@
     }
   }
 }
+
+.modal_show {
+  display: block;
+  top: 0%;
+  right: 0%;
+  animation: modal_show 1.5s ease-in-out 0s 1 normal forwards;
+  -webkit-animation: modal_show 1.5s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes modal_show {
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+  }
+}
+
+//
+
 //===================================max-width: 450px
+
 @media screen and (max-width: 450px) {
   .modal {
     display: none;
     width: 100vw;
+
     svg:first-child {
       width: 32px;
       height: 32px;
@@ -75,6 +165,7 @@
       margin-top: 40px;
       margin-left: 34vw;
     }
+
     .modal_content {
       width: 90%;
       margin-top: 30%;

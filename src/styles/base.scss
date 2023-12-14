@@ -13,8 +13,7 @@ body {
   color: $white;
 
   a,
-  button,
-  a > span {
+  button {
     font-family: 'Cormorant Garamond SemiBold', serif;
     background-color: transparent;
     @include font_adapt(18, 12);
@@ -31,6 +30,7 @@ body {
 
     &:hover {
       color: $accent;
+
       text-decoration: underline;
       text-decoration-style: solid;
       text-underline-position: under;
