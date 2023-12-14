@@ -37,10 +37,8 @@ header {
           }
 
           li:last-child {
-            img {
-              width: 50px;
-              height: 20px;
-            }
+            display: flex;
+            align-items: center;
           }
 
           :not(.logotype) {
@@ -99,8 +97,68 @@ header {
 }
 
 #vector2 {
+  stroke: $white;
+
   &:hover {
     stroke: $accent;
+  }
+}
+
+%btn_open {
+  width: 40px;
+  height: 2px;
+}
+
+.open_now {
+  @extend %btn_open;
+  background-color: $white;
+  position: relative;
+
+  %btn_bef_open {
+    @include сentering-xy();
+    content: '';
+    @extend %btn_open;
+    transform: translateX(-10px) translateY(10px);
+    -webkit-transform: translateX(-10px) translateY(10px);
+    -moz-transform: translateX(-10px) translateY(10px);
+    -ms-transform: translateX(-10px) translateY(10px);
+    -o-transform: translateX(-10px) translateY(10px);
+  }
+
+  %btn_aft_open {
+    @include сentering-xy();
+    content: '';
+    @extend %btn_open;
+    transform: translateX(-10px) translateY(-12px);
+    -webkit-transform: translateX(-10px) translateY(-12px);
+    -moz-transform: translateX(-10px) translateY(-12px);
+    -ms-transform: translateX(-10px) translateY(-12px);
+    -o-transform: translateX(-10px) translateY(-12px);
+  }
+
+  ::before {
+    background-color: $white;
+    @extend %btn_bef_open;
+  }
+
+  ::after {
+    background-color: $white;
+    @extend %btn_aft_open;
+  }
+}
+
+.open_now:hover {
+  background-color: $accent;
+  @include transit;
+
+  ::after {
+    background-color: $accent;
+    @extend %btn_aft_open;
+  }
+
+  ::before {
+    background-color: $accent;
+    @extend %btn_bef_open;
   }
 }
 
@@ -124,15 +182,15 @@ header {
         li {
           position: relative;
 
-          &:hover > ul:first-of-type {
+          &:hover>ul:first-of-type {
             display: initial;
           }
 
-          &:not(:hover) > ul:first-of-type {
+          &:not(:hover)>ul:first-of-type {
             display: none;
           }
 
-          &:hover > span {
+          &:hover>span {
             @include transit;
             color: $accent;
           }
@@ -195,11 +253,16 @@ header {
       right: 10px;
 
       ul {
+        height: inherit;
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
         padding-top: 5px;
+
+        li:last-child {
+          height: 100%;
+        }
       }
     }
   }

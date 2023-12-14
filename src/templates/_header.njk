@@ -51,13 +51,13 @@
             {% for a in nav_left %}                              
             <li>
               {% if title == a.titl %} 
-                  <a href={{ a.link }} title={{ a.titl }} class="active" >
+                  <a href={{ a.link }} title={{ a.titl }} class="active a_nav" >
                     <span> 
                       {{ a.text }} 
                     </span>
                   </a>
                 {% else %}
-                  <a href={{ a.link }} title={{ a.titl }}>
+                  <a href={{ a.link }} title={{ a.titl }} class="a_nav">
                     <span> 
                       {{ a.text }} 
                     </span>
@@ -75,13 +75,13 @@
             {% for a in nav_right %}                  
             <li>
               {% if title == a.titl %} 
-                  <a href={{ a.link }} title={{ a.titl }} class="active" >
+                  <a href={{ a.link }} title={{ a.titl }} class="active a_nav" >
                     <span> 
                       {{ a.text }} 
                     </span>
                   </a>
                 {% else %}
-                  <a href={{ a.link }} title={{ a.titl }}>
+                  <a href={{ a.link }} title={{ a.titl }} class="a_nav">
                     <span> 
                       {{ a.text }} 
                     </span>
@@ -89,11 +89,10 @@
                 {% endif %}
               {% endfor %} 
             </li> 
-
             <li class="mini_menu">
-              <a href="#" title="working_hours" class="open_now"> 
-                {% include "./svg_inline/_logo_working_hours.njk" %}
-              </a>
+              <button class="open_now"> 
+                <span>-</span>
+              </button>
             </li>              
           </ul>
         </li>
@@ -112,9 +111,9 @@
           </a>
         </li>
         <li>
-          <a href="#" title="working_hours"  class="open_now"> 
-            {% include "./svg_inline/_logo_working_hours.njk" %}
-          </a>
+          <button class="open_now"> 
+            <span></span>
+          </button>
         </li>
       </ul>
     </menu>

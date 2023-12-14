@@ -12,16 +12,64 @@ body {
   font-size: 18px;
   color: $white;
 
-  a,
+  a.active {
+    color: $accent;
+  }
+
+  a.phone_number,
+  a.email,
+  a.instagram {
+    font-family: 'Cormorant Garamond SemiBold', serif;
+    background-color: transparent;
+    @include font_adapt(18, 12);
+    text-transform: capitalize;
+    color: $white;
+    position: relative;
+
+    &:visited {
+      color: $white;
+    }
+
+    &:hover {
+      color: $accent;
+      text-decoration: none;
+      position: relative;
+    }
+
+    &:active {
+      color: $black;
+      letter-spacing: 0.25rem;
+      text-shadow: -5px -5px 15px $accent;
+    }
+
+    @include transit;
+  }
+
+  a.a_nav,
+  button.btn_filter,
   button {
     font-family: 'Cormorant Garamond SemiBold', serif;
     background-color: transparent;
     @include font_adapt(18, 12);
     text-transform: capitalize;
     color: $white;
+    position: relative;
 
-    &:link {
-      color: $white;
+    ::after {
+      @include сentering-xy();
+      content: '';
+      width: 0%;
+      height: 2px;
+      background-color: $white;
+      transform: translateX(-50%) translateY(10px);
+      -webkit-transform: translateX(-50%) translateY(10px);
+      -moz-transform: translateX(-50%) translateY(10px);
+      -ms-transform: translateX(-50%) translateY(10px);
+      -o-transform: translateX(-50%) translateY(10px);
+
+      &:link {
+        color: $white;
+      }
     }
 
     &:visited {
@@ -30,12 +78,22 @@ body {
 
     &:hover {
       color: $accent;
+      text-decoration: none;
+      position: relative;
 
-      text-decoration: underline;
-      text-decoration-style: solid;
-      text-underline-position: under;
-      text-underline-offset: 2.5px;
-      -moz-text-decoration-style: solid;
+      ::after {
+        @include сentering-xy();
+        @include transit;
+        content: '';
+        width: 80%;
+        height: 2px;
+        background-color: $accent;
+        transform: translateX(-50%) translateY(10px);
+        -webkit-transform: translateX(-50%) translateY(10px);
+        -moz-transform: translateX(-50%) translateY(10px);
+        -ms-transform: translateX(-50%) translateY(10px);
+        -o-transform: translateX(-50%) translateY(10px);
+      }
     }
 
     &:active {
@@ -118,9 +176,10 @@ main {
   }
 
   :root {
+
     a,
     button,
-    a > span {
+    a>span {
       font-size: calc(18px + 2rem);
     }
 
