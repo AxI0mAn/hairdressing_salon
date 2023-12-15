@@ -1,1 +1,0 @@
-!function(){"use strict";!function(){const e=document.querySelector(".modal"),n=document.querySelectorAll(".open_now"),o=document.querySelector("#close_now");for(let o of n)o.addEventListener("click",(()=>{e.style.display="block"}));window.onclick=function(n){n.target==e&&(e.style.display="none")},o.addEventListener("click",(()=>{e.style.display="none"}))}()}();
