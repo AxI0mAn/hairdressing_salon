@@ -15,12 +15,15 @@
   align-content: center;
   text-align: center;
 }
+
 .hero {
   width: 100%;
+
   .hero_content {
     width: 100%;
     height: func_respons(1038, 230);
     position: relative;
+
     img {
       width: 100%;
       height: auto;
@@ -30,6 +33,7 @@
       top: 0;
       left: 0;
     }
+
     h1 {
       width: func_perc(1920, 961);
       line-height: func_respons(100, 20); // default 86.4px
@@ -37,6 +41,7 @@
     }
   }
 }
+
 .welcome {
   width: func_perc(1296, 856);
   position: relative;
@@ -44,11 +49,13 @@
 
   line-height: func_respons(35.1, 20);
   letter-spacing: func_rem(2.5);
+
   .welcome_content {
     svg {
       width: func_respons(80, 20);
       height: auto;
     }
+
     .welcome_text {
       p {
         margin-top: func_respons(32, 16);
@@ -62,16 +69,19 @@
   grid-template-columns: repeat(auto-fill, minmax(func_respons(396, 95), 1fr));
   gap: 44px;
   justify-items: center;
+
   h3 {
     margin: 5px 0px;
     text-transform: capitalize;
     text-align: left;
   }
+
   .img_services_content {
     width: func_respons(396, 95);
     height: func_respons(300, calc(300 * 95 / 396));
     position: relative;
     z-index: 5;
+
     img {
       display: block;
       width: 100%;
@@ -80,6 +90,7 @@
       object-position: center center;
     }
   }
+
   .img_services_content::after {
     content: ' ';
     position: absolute;
@@ -90,16 +101,30 @@
     top: calc(-1 * func_respons(20, 5)); //-20px;
     left: func_respons(20, 5); //20px;
   }
+
+  .img_services_content:hover::after {
+    content: ' ';
+    position: absolute;
+    z-index: -5;
+    width: func_respons(396, 95); // func_respons(396, 100); //396, 300
+    height: func_respons(300, calc(300 * 95 / 396)); // func_respons(300, 75.757); //300, 227.27
+    border: 1px solid $accent;
+    background: $accent;
+    top: calc(-1 * func_respons(20, 5)); //-20px;
+    left: func_respons(20, 5); //20px;
+  }
 }
 
 .partners {
   margin: func_respons(160, 40) auto;
+
   .partners_content {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     align-content: space-around;
+
     img {
       min-width: 50px;
       height: auto;
@@ -107,6 +132,7 @@
     }
   }
 }
+
 .work {
   .filter {
     width: func_perc(1920, 1000); // default 722
@@ -115,6 +141,7 @@
     flex-flow: row wrap;
     justify-content: space-around;
   }
+
   .work_content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(func_respons(415, 1), 1fr));
@@ -122,9 +149,11 @@
     justify-content: center;
     align-content: center;
     margin-bottom: func_rem(100);
+
     .img_work_content {
       justify-self: center;
       overflow: hidden;
+
       img {
         display: block;
         width: func_respons(415, 1);
@@ -142,14 +171,17 @@
     .services {
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 12px;
+
       .img_services_content {
         min-width: 300px;
         min-height: 227.27px;
+
         img {
           min-width: 300px;
           min-height: 227.27px;
         }
       }
+
       .img_services_content::after {
         min-width: 300px;
         min-height: 227.27px;
@@ -157,6 +189,7 @@
     }
   }
 }
+
 //===================================max-width: 1380px
 @media screen and (max-width: 1380px) {
   .main_index {
@@ -164,6 +197,7 @@
       .work_content {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 12px;
+
         .img_work_content {
           img {
             min-width: 300px;
@@ -174,6 +208,7 @@
     }
   }
 }
+
 //===================================max-width: 910px
 @media screen and (max-width: 910px) {
   .main_index {
@@ -182,10 +217,12 @@
     }
   }
 }
+
 //===================================max-width: 880px
 @media screen and (max-width: 880px) {
   .partners {
     width: 96%;
+
     .partners_content {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -195,22 +232,27 @@
     }
   }
 }
+
 //===================================max-width: 768px
 @media screen and (max-width: 768px) {
   .main_index {
     margin-top: 0px;
   }
+
   .welcome {
     width: 80vw;
   }
 }
+
 //===================================max-width: 450px
 @media screen and (max-width: 450px) {
   .welcome {
     width: 90vw;
   }
+
   .partners {
     width: 90%;
+
     img {
       width: 70px;
     }
