@@ -10,7 +10,7 @@
 ] %}
 
 {%- macro catalog(params, classBlock="block") -%}
-  <div class="{{classBlock}} item">
+  <div class="{{classBlock}} item swiper-slide">
     <img src="{{params.src}}" loading="lazy" alt="{{params.alt}}" title="{{params.titl}}"/>
     <div>
       <h3>{{params.card_header}}</h3>

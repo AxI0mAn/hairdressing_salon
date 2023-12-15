@@ -6,17 +6,25 @@
   <h2>beauty products</h2>
   <section class="container">
     <div class="catalog_cosmetics">
-      <article class="catalog_hair catalog">
-        {% include "./catalogs/_cat_hair.njk" %}
+      <article class="catalog_hair catalog swiper-cosmetics_catalog_hair">
+        <div class="swiper-wrapper">
+          {% include "./catalogs/_cat_hair.njk" %}
+        </div>
       </article>
-      <article class="catalog_nails catalog">
-        {% include "./catalogs/_cat_nail.njk" %}
+      <article class="catalog_nails catalog swiper-cosmetics_catalog_nail">
+        <div class="swiper-wrapper">
+          {% include "./catalogs/_cat_nail.njk" %}
+        </div>
       </article>
-      <article class="catalog_body catalog">
-        {% include "./catalogs/_cat_body.njk" %}
+      <article class="catalog_body catalog  swiper-cosmetics_catalog_body">
+        <div class="swiper-wrapper">
+          {% include "./catalogs/_cat_body.njk" %}
+        </div>
       </article>
-      <article class="catalog_make_up catalog">
-        {% include "./catalogs/_cat_make_up.njk" %}
+      <article class="catalog_make_up catalog swiper-cosmetics_catalog_makeUp">
+        <div class="swiper-wrapper">
+          {% include "./catalogs/_cat_make_up.njk" %}
+        </div>
       </article>
     </div>
   </section>

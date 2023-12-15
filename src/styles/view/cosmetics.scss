@@ -4,12 +4,15 @@
   width: 96%;
   text-align: center;
   margin: 0 auto;
+
   h2 {
     margin: func_respons(80, 20) auto;
   }
+
   .catalog_cosmetics {
     margin: 0 auto;
     margin-bottom: func_rem(100);
+
     .catalog {
       margin: 10px auto;
       width: 100%;
@@ -19,6 +22,7 @@
       gap: func_respons(20, 10) func_respons(20, 10);
 
       border-bottom: 1px $accent groove;
+
       .item {
         margin: 10px auto;
         height: fit-content;
@@ -26,34 +30,45 @@
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         gap: func_respons(10, 5);
-        border-bottom: 5px $accent groove;
+
         img:first-child {
-          width: 94%;
+          width: 54%;
+          height: auto;
           justify-self: center;
           height: auto;
         }
+
         div:first-of-type {
           width: 90%;
           display: flex;
           flex-flow: column nowrap;
           justify-content: space-around;
+          align-content: center;
           justify-self: center;
+
           h3 {
             color: $accent;
             margin-bottom: 5px;
           }
+
           p {
+            margin: 20px auto;
             height: fit-content;
+            max-width: 50%;
           }
+
           strong {
+            margin: 20px auto;
             position: relative;
             font-family: 'Garamond Bold', serif;
           }
+
           button {
             font-family: 'Garamond Bold', serif;
             color: $accent;
             text-shadow: 1px -1px 2px $white;
             margin-bottom: 5px;
+
             &:active {
               color: $bgc;
               text-shadow: 1px -1px 8px $accent;
@@ -64,6 +79,7 @@
     }
   }
 }
+
 //===================================min-width: 1921px
 @media screen and (min-width: 1921px) {
   .main_cosmetics {
