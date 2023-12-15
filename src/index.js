@@ -17,15 +17,14 @@ import 'swiper/css/pagination';
 new Swiper('.swiper-review', {
   modules: [Navigation, Pagination],
   navigation: {
-    nextEl: '.btn_review_right',
-    prevEl: '.btn_review_left',
+    nextEl: '.btn_review_left',
+    prevEl: '.btn_review_right',
   },
   grabCursor: true,
 });
 
 new Swiper('.swiper-cosmetics_catalog_hair', {
   loop: true,
-  effect: 'cards',
   grabCursor: true, //курсор типа "grab"
   slidesPerView: 1.2, // слайды, видимые одновременно в контейнере слайдера
   centeredSlides: true, //активный слайд будет отцентрирован
