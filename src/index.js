@@ -25,12 +25,11 @@ new Swiper('.swiper-review', {
 
 new Swiper('.swiper-cosmetics_catalog_hair', {
   loop: true,
-  effect: "cards",
+  effect: 'cards',
   grabCursor: true, //курсор типа "grab"
   slidesPerView: 1.2, // слайды, видимые одновременно в контейнере слайдера
   centeredSlides: true, //активный слайд будет отцентрирован
   slideToClickedSlide: true, // click приведет к переходу на этот слайд
-
 });
 
 new Swiper('.swiper-cosmetics_catalog_nail', {
@@ -38,7 +37,6 @@ new Swiper('.swiper-cosmetics_catalog_nail', {
   slidesPerView: 1.2, // слайды, видимые одновременно в контейнере слайдера
   centeredSlides: true, //активный слайд будет отцентрирован
   slideToClickedSlide: true, // click приведет к переходу на этот слайд
-
 });
 
 new Swiper('.swiper-cosmetics_catalog_body', {
@@ -46,12 +44,10 @@ new Swiper('.swiper-cosmetics_catalog_body', {
   slidesPerView: 1.2, // слайды, видимые одновременно в контейнере слайдера
   centeredSlides: true, //активный слайд будет отцентрирован
   slideToClickedSlide: true, // click приведет к переходу на этот слайд
-
 });
 new Swiper('.swiper-cosmetics_catalog_makeUp', {
   grabCursor: true, //курсор типа "grab"
   slidesPerView: 1.2, // слайды, видимые одновременно в контейнере слайдера
   centeredSlides: true, //активный слайд будет отцентрирован
   slideToClickedSlide: true, // click приведет к переходу на этот слайд
-
 });
