@@ -1,16 +1,33 @@
 {% block _review_all %}
 
-        {% set reviews = [
+        {% set new_reviews = [
           {
             src: './../assets/images/reviews/work_4L.jpeg',
             alt: 'real review about our services',
             titl: 'real review about our services',
             header: "nice service",
             text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, ea. Lorem ipsum dolor
-      sit amet consectetur adipisicing elit. Eligendi eius fuga architecto."          
-          },
+      sit amet consectetur adipisicing elit. Eligendi eius fuga architecto."    
+      },
           {
             src: './../assets/images/reviews/work_5L.jpeg',
+            alt: 'last review about our services',
+            titl: 'last review about our services',
+            header: "very good masters",
+            text:  "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, ea. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Eligendi eius fuga architecto.  Repellendus, ea. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Eligendi eius fuga architecto."           
+          },
+          {
+            src: './../assets/images/reviews/work_2L.jpeg',
+            alt: 'real review about our services',
+            titl: 'real review about our services',
+            header: "nice service",
+            text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, ea. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Eligendi eius fuga architecto."    
+      },
+          {
+            src: './../assets/images/reviews/work_3L.jpeg',
             alt: 'last review about our services',
             titl: 'last review about our services',
             header: "very good masters",
@@ -31,14 +48,16 @@
         ]%}
         {%- import "_macros_gallery.njk" as showCase -%}
 
-        {% for item in reviews %}
-        <div class="review">
-          {{ showCase.gallery(item, classBlock = 'reviews_content') }}
-          <div class="review_text">
-            <h3>{{item.header}}</h3>
-            <p>{{item.text}}</p>
+        {% for item in new_reviews %}
+        <div class="swiper-slide">
+          <div class="review">
+            {{ showCase.gallery(item, classBlock = 'reviews_content') }}
+            <div class="review_text">
+              <h3>{{item.header}}</h3>
+              <p>{{item.text}}</p>
+            </div>
           </div>
         </div>
-        {% endfor %} 
+        {% endfor %}  
 
 {% endblock %}

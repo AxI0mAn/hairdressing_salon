@@ -182,15 +182,15 @@ header {
         li {
           position: relative;
 
-          &:hover>ul:first-of-type {
+          &:hover > ul:first-of-type {
             display: initial;
           }
 
-          &:not(:hover)>ul:first-of-type {
+          &:not(:hover) > ul:first-of-type {
             display: none;
           }
 
-          &:hover>span {
+          &:hover > span {
             @include transit;
             color: $accent;
           }

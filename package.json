@@ -46,6 +46,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "nunjucks": "^3.2.4"
+    "nunjucks": "^3.2.4",
+    "swiper": "^11.0.5"
   }
 }

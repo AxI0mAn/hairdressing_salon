@@ -1,14 +1,59 @@
 @import './../base.scss';
+
 .main_reviews {
   width: 96%;
   margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+
   h2 {
     margin: func_respons(80, 20) auto;
     text-align: center;
   }
+
+  %general_for_reviews {
+    .review {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-around;
+      align-content: center;
+
+      .img_reviews_content {
+        width: func_respons(600, 300);
+        height: auto;
+        text-align: center;
+        align-self: center;
+
+        img {
+          max-width: 300px;
+          max-height: 500px;
+        }
+      }
+
+      .review_text {
+        width: func_respons(500, 300);
+        margin: func_respons(20, 10) auto;
+        border-bottom: 1px $accent groove;
+        height: fit-content;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+
+        h3 {
+          align-self: center;
+        }
+
+        p {
+          margin: 10px auto 20px auto;
+        }
+      }
+    }
+  }
+
   section {
     margin: 0 auto;
-    .reviews-new {
+
+    .reviews-new_grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(func_respons(600, 300), 1fr));
       gap: 0px 10px;
@@ -16,46 +61,56 @@
       justify-items: center;
       align-items: start;
       margin: func_respons(100, 40) auto;
-      .review {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-around;
-        align-content: center;
-        .img_reviews_content {
-          width: func_respons(600, 300);
-          height: auto;
-          text-align: center;
-          img {
-            max-width: 300px;
-            max-height: 500px;
-          }
-        }
-        .review_text {
-          width: func_respons(500, 300);
-          margin: func_respons(20, 10) auto;
-          border-bottom: 1px $accent groove;
-          height: fit-content;
-          display: flex;
-          flex-flow: column nowrap;
-          justify-content: space-around;
-          h3 {
-            align-self: center;
-          }
-          p {
-            margin: 10px auto 20px auto;
-          }
-        }
+
+      @extend %general_for_reviews;
+    }
+
+    .reviews-new_slid {
+      display: flex;
+      flex-flow: row nowrap;
+      width: 100%;
+
+      @extend %general_for_reviews;
+    }
+  }
+
+  .btn_review {
+    z-index: 10;
+    position: fixed;
+    bottom: calc(20% + 10vh);
+    width: func_respons(1296, 320); //func_perc(1920, 1296); // default 1296;
+    max-width: calc($maxWidthContainer * 1px);
+    margin-left: 10vw;
+    height: 100px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+
+    .btn_review_left {
+      height: fit-content;
+      transform: scaleY(4) scaleX(2);
+      -webkit-transform: scaleY(4) scaleX(2);
+      -moz-transform: scaleY(4) scaleX(2);
+      -ms-transform: scaleY(4) scaleX(2);
+      -o-transform: scaleY(4) scaleX(2);
+
+      &:hover {
+        color: $accent;
+      }
+    }
+
+    .btn_review_right {
+      height: fit-content;
+      transform: rotateY(180deg) scaleY(4) scaleX(2);
+      -webkit-transform: rotateY(180deg) scaleY(4) scaleX(2);
+      -moz-transform: rotateY(180deg) scaleY(4) scaleX(2);
+      -ms-transform: rotateY(180deg) scaleY(4) scaleX(2);
+      -o-transform: rotateY(180deg) scaleY(4) scaleX(2);
+
+      &:hover {
+        color: $accent;
       }
     }
   }
-}
-//===================================max-width: 900px
-@media screen and (max-width: 900px) {
-  // .main_reviews {
-  //   .review {
-  //     width: 90%;
-  //     display: grid;
-  //     grid-template-columns: 1fr;
-  //   }
-  // }
 }

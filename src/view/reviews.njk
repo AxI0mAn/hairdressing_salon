@@ -4,11 +4,16 @@
 {% include "_header.njk" %}
 <main class="main_reviews">
   <h2>Reviews our Clients</h2>
-  <section class="container">
-    <div class="reviews-new">
+  <section class="container swiper-review">
+    <div class="reviews-new reviews-new_slid swiper-wrapper">
       {% include "_review_all.njk" %}
     </div>
   </section>
+  <div class="btn_review">
+      <span class="btn_review_left">&#11013;</span>
+      <span class="btn_review_right">&#11013;</span>
+  </div>
+
 </main>
 {% include "_modal.njk" %}  
-{% include "_footer.njk" %}
+{% include "_footer.njk" %} 
